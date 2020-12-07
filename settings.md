@@ -12,7 +12,7 @@ To start your terminal elevated from your taskbar just create a shortcut with th
 
 	C:\Windows\System32\cmd.exe /c start /b wt
 
-Icons modified to make your terminal look better, are provided in the img folder of this repository as well.
+Icons modified to make your terminal look better, are provided in the [img](https://github.com/H3AR7B3A7/WindowsTerminalAndPowershell/tree/master/img) folder of this repository as well.
 
 ### Settings
 
