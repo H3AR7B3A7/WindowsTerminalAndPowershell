@@ -10,9 +10,14 @@ For Powershell 7:
 C:\Users\<UserName>\Documents\PowerShell
 
 	# Shorten the current directory path to just the folder
-    function prompt {
-      $p = Split-Path -leaf -path (Get-Location)
-      "~ \$p> "
+    function prompt{
+      $check = $pwd.drive
+      if ( "$check`:\" -eq $pwd.path){
+        "$pwd>"
+      }else{
+        $p = Split-Path -leaf -path (Get-Location)
+        "~ \$p> $"
+      }
     }
     
     # Change or create files
