@@ -16,7 +16,7 @@ C:\Users\<UserName>\Documents\PowerShell
         "$pwd>"
       }else{
         $p = Split-Path -leaf -path (Get-Location)
-        "~ \$p> "
+        "~ $p\> "
       }
     }
     
