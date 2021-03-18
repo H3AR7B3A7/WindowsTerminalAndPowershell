@@ -3,6 +3,7 @@ Documentation on my Windows Powershell preferences and created functions, mostly
 My hope is to grow this over time to be a useful resource for windows users who desire a better user experience. 
 
 
-- [Terminal Settings](https://github.com/H3AR7B3A7/WindowsTerminalAndPowershell/blob/master/settings.md)
-- [Powershell Functions](https://github.com/H3AR7B3A7/WindowsTerminalAndPowershell/blob/master/functions.md)
-- [Powershell Cheatsheet](https://github.com/H3AR7B3A7/WindowsTerminalAndPowershell/blob/master/PowershellCheatsheet.md)
+- [Windows Terminal Settings](Settings.md)
+- [Windows Terminal Shortcuts](TerminalShortcuts.md)
+- [Powershell Functions](Functions.md)
+- [Powershell Cheatsheet](PowershellCheatsheet.md)

@@ -1,10 +1,11 @@
 # Powershell Cheatsheet
 
-- **cd "path"** - Go to path.
-- **cd ..** - Go up in file structure.
-- **ls -r** - List children recursively.
-- **ii.** - Open current folder in explorer.
-- **Remove-Item <file> -f -r** - Force remove item.
-- **pwd** - Get current full path.
-- **clear** - Clear the window.
-- **$Profile** - Find user profile location.
+## Commands
+- **cd "path"** &nbsp; - &nbsp; Go to path.
+- **cd ..** &nbsp; - &nbsp; Go up in file structure.
+- **ls -r** &nbsp; - &nbsp; List children recursively.
+- **ii.** &nbsp; - &nbsp; Open current folder in explorer.
+- **Remove-Item <file> -f -r** &nbsp; - &nbsp; Force remove item.
+- **pwd** &nbsp; - &nbsp; Get current full path.
+- **clear** &nbsp; - &nbsp; Clear the window.
+- **$Profile** &nbsp; - &nbsp; Find user profile location.
