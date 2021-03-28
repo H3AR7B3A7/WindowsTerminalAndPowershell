@@ -3,6 +3,7 @@
 [Official Documentation](https://docs.microsoft.com/en-gb/windows/terminal/)  
 [Download](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
 
+
 ### Profiles
 
 Other shells that were added include: PowerShell 7, Git Bash, Python, JShell
@@ -13,6 +14,7 @@ These tools and/or languages will have to be installed separately.
 - [Python Shell](https://www.python.org/downloads/)
 - [JShell](https://www.oracle.com/java/technologies/javase-downloads.html)
 
+
 ### Use as Administrator
 
 To start your terminal elevated from your taskbar just create a shortcut with the following as location:
@@ -20,6 +22,18 @@ To start your terminal elevated from your taskbar just create a shortcut with th
 	C:\Windows\System32\cmd.exe /c start /b wt
 
 Icons modified to make your terminal look better, are provided in the [img](https://github.com/H3AR7B3A7/WindowsTerminalAndPowershell/tree/master/img) folder of this repository as well.
+
+
+### Running .bat files in terminal
+
+In regedit navigate to:
+
+    HKEY_CLASSES_ROOT\batfile\shell\open\command
+
+Change the default value to:
+
+    "C:\Users\StevenD'Hondt\AppData\Local\Microsoft\WindowsApps\wt.exe" -d . -p "Command Prompt" "%1" %*
+
 
 ### Settings
 
