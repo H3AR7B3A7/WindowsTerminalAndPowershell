@@ -2,14 +2,14 @@
 
 ## Shortcuts
 
-- **Ctrl + L** &nbsp; - &nbsp; Clear the window
-- **Alt + Arrow Key** &nbsp; - &nbsp; Change window
-- **Alt + Shift + Arrow Key** &nbsp; - &nbsp; Resize current window
-- **Ctrl + Shift + W** &nbsp; - &nbsp; Close the window
+- **Ctrl + L** &nbsp; - &nbsp; Clear the pane
+- **Alt + Arrow Key** &nbsp; - &nbsp; Change active pane
+- **Alt + Shift + Arrow Key** &nbsp; - &nbsp; Resize current pane
+- **Ctrl + Shift + W** &nbsp; - &nbsp; Close the pane
 - **Ctrl + Shift + D** &nbsp; - &nbsp; Open new tab
 - **Ctrl + Tab** &nbsp; - &nbsp; Next tab
 - **Ctrl + Shift + 1** &nbsp; - &nbsp; Open new tab with #1 shell (2: #2 shell, ...)
-- **Alt + Shift + D** &nbsp; - &nbsp; New window
+- **Alt + Shift + D** &nbsp; - &nbsp; New pane
 - **Alt + Shift + &nbsp; +** &nbsp; - &nbsp; Split horizontally
 - **Alt + Shift + &nbsp; -** &nbsp; - &nbsp; Split vertically
 - **F11** &nbsp; - &nbsp; Full screen
