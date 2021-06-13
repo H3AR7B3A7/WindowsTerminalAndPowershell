@@ -1,14 +1,7 @@
 # Powershell Cheatsheet
 
-## Shortcuts
-- **Ctrl + L** &nbsp; - &nbsp; Clear the window
-- **Alt + Shift + D** &nbsp; - &nbsp; Split horizontally
-- **Alt + Shift + -** &nbsp; - &nbsp; Split vertically
-- **Alt + Arrow Key** &nbsp; - &nbsp; Change window
-- **Alt + Shift + Arrow Key** &nbsp; - &nbsp; Resize current window
-- **Ctrl + Shift + W** &nbsp; - &nbsp; Close the window
-
 ## Commands
+
 - **cd "path"** &nbsp; - &nbsp; Go to path
 - **cd ..** &nbsp; - &nbsp; Go up in file structure
 - **ls -r** &nbsp; - &nbsp; List children recursively
