@@ -21,6 +21,6 @@ update powershell core 7.1 from command line
 
 If you have Chocolatey package manager installed, you can install or update your PowerShell version using the following commands:
 
-> choco install powershell -y
+> choco upgrade pwsh -y
 
-> choco upgrade powershell -y
+> choco upgrade pwsh -y
