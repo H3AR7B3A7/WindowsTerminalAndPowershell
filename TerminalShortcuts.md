@@ -2,24 +2,24 @@
 
 ## Shortcuts
 
-- **Ctrl + L** &nbsp; - &nbsp; Clear the pane
-- **Alt + Arrow Key** &nbsp; - &nbsp; Change active pane
-- **Alt + Shift + Arrow Key** &nbsp; - &nbsp; Resize current pane
-- **Ctrl + Shift + W** &nbsp; - &nbsp; Close the pane
-- **Ctrl + Shift + D** &nbsp; - &nbsp; Open new tab
-- **Ctrl + Tab** &nbsp; - &nbsp; Next tab
-- **Ctrl + Shift + 1** &nbsp; - &nbsp; Open new tab with #1 shell (2: #2 shell, ...)
-- **Alt + Shift + D** &nbsp; - &nbsp; New pane
-- **Alt + Shift + &nbsp; +** &nbsp; - &nbsp; Split horizontally
-- **Alt + Shift + &nbsp; -** &nbsp; - &nbsp; Split vertically
-- **F11** &nbsp; - &nbsp; Full screen
-- **Ctrl + Shift + PgUp** &nbsp; - &nbsp; Scroll up one page
-- **Ctrl + Shift + PgDn** &nbsp; - &nbsp; Scroll down one page
-- **Ctrl + Shift + Home** &nbsp; - &nbsp; Scroll to start of history
-- **Ctrl + Shift + End** &nbsp; - &nbsp; Scroll to end of history
-- **Ctrl + Shift + N** &nbsp; - &nbsp; New window
-- **Ctrl + &nbsp; +** (Numpad) &nbsp; - &nbsp; Increase font size
-- **Ctrl + &nbsp; -** (Numpad) &nbsp; - &nbsp; Decrease font size
-- **Ctrl + Shift + F** &nbsp; - &nbsp; Find
-- **Ctrl + ,** &nbsp; - &nbsp; Open Settings
-- **Ctrl + Shift + P** &nbsp; - &nbsp; Open command palette
+- <kbd>Ctrl</kbd> + <kbd>L</kbd> &nbsp; - &nbsp; Clear the pane
+- <kbd>Alt</kbd> + <kbd>Arrow Key</kbd> &nbsp; - &nbsp; Change active pane
+- <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>Arrow Key</kbd> &nbsp; - &nbsp; Resize current pane
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd> &nbsp; - &nbsp; Close the pane
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> &nbsp; - &nbsp; Open new tab
+- <kbd>Ctrl</kbd> + <kbd>Tab</kbd> &nbsp; - &nbsp; Next tab
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>1</kbd> &nbsp; - &nbsp; Open new tab with #1 shell (2: #2 shell, ...)
+- <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd> &nbsp; - &nbsp; New pane
+- <kbd>Alt</kbd> + <kbd>Shift</kbd> + &nbsp; <kbd>+</kbd> &nbsp; - &nbsp; Split horizontally
+- <kbd>Alt</kbd> + <kbd>Shift</kbd> + &nbsp; <kbd>-</kbd> &nbsp; - &nbsp; Split vertically
+- <kbd>F11</kbd> &nbsp; - &nbsp; Full screen
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>PgUp</kbd> &nbsp; - &nbsp; Scroll up one page
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>PgDn</kbd> &nbsp; - &nbsp; Scroll down one page
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Home</kbd> &nbsp; - &nbsp; Scroll to start of history
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>End</kbd> &nbsp; - &nbsp; Scroll to end of history
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd> &nbsp; - &nbsp; New window
+- <kbd>Ctrl</kbd> + &nbsp; <kbd>+</kbd> (Numpad) &nbsp; - &nbsp; Increase font size
+- <kbd>Ctrl</kbd> + &nbsp; <kbd>-</kbd> (Numpad) &nbsp; - &nbsp; Decrease font size
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> &nbsp; - &nbsp; Find
+- <kbd>Ctrl</kbd> + <kbd>,</kbd> &nbsp; - &nbsp; Open Settings
+- <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> &nbsp; - &nbsp; Open command palette
