@@ -135,7 +135,8 @@ Change the default value to:
         // Make changes here to the WSL Ubuntu
         "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "name": "Ubuntu",
-        "source": "Windows.Terminal.Wsl"
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "/home/steven"
       }
     ]
   },
