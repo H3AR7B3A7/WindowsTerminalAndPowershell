@@ -20,4 +20,4 @@ My hope is to grow this over time to be a useful resource for Windows users who 
 
 ## Default Powershell
 
-- [Default Powershell Commands](DefaultPowershelCommands.md)
+- [Default Powershell Commands](DefaultPowershellCommands.md)
