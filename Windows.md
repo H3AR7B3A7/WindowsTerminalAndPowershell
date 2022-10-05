@@ -100,11 +100,43 @@ NTFS special permissions:
 - Change permission
 - Take ownership
 
-#### Computer Management
+### Computer Management
 
 Computer Management is a tool we can use to identify and monitor shared resources on a Windows system.
 
-#### Event Viewer
+### Event Viewer
 
 Event Viewer is another good place to investigate actions completed on Windows.
+
+### Service Control Manager (SCM)
+
+Windows services are managed via the Service Control Manager system, accessible via the services.msc MMC add-in.
+
+It is also possible to query and manage services via the command line using sc.exe using PowerShell cmdlets such as
+Get-Service.
+
+> Get-Service | ? {$_.Status -eq "Running"} | select -First 2 |fl
+
+_If we update any file or resource in use by a critical system services, we must restart the system._
+
+### Local Security Authority Subsystem Service (LSASS)
+
+lsass.exe is the process that is responsible for enforcing the security policy on Windows systems.
+When a user attempts to log on to the system, this process verifies their log on attempt and creates
+access tokens based on the user's permission levels.
+
+### Sysinternals Tools
+
+The SysInternals Tools suite is a set of portable Windows applications that can be used to administer Windows systems
+(for the most part without requiring installation).
+
+> \\live.sysinternals.com\tools\procdump.exe -accepteula
+
+Some tools in this suite:
+
+- Process Explorer, an enhanced version of Task Manager
+- Process Monitor, used to monitor file system, registry, and network activity related to any process running on the
+  system.
+- TCPView, used to monitor internet activity
+- PSExec, used to manage/connect to systems via the SMB protocol remotely.
 
