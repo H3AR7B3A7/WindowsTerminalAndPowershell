@@ -140,3 +140,22 @@ Some tools in this suite:
 - TCPView, used to monitor internet activity
 - PSExec, used to manage/connect to systems via the SMB protocol remotely.
 
+### Service Permissions
+
+The first step in realizing the importance of service permissions is simply understanding that they exist
+and being mindful of them. On server operating systems, critical network services like DHCP and
+Active Directory Domain Services commonly get installed using the account assigned to the admin performing the install.
+Part of the installation process includes assigning a specific service to run using the credentials and privileges of
+a designated user, which by default is set within the currently logged-on user context.
+
+It is highly recommended to create an individual user account to run critical network services, called Service Accounts.
+
+#### Service Accounts
+
+Notable built-in service accounts in Windows:
+- LocalService
+- NetworkService
+- LocalSystem
+
+_We can also create new accounts and use them for the sole purpose of running a service._
+
