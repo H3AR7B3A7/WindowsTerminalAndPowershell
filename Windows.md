@@ -62,19 +62,19 @@ due to improved data structuring.
     - Most mobile devices do not support NTFS natively.
     - Older media devices such as TVs and digital cameras do not offer support for NTFS storage devices.
 
-#### Permissions
+## Permissions
 
 The Server Message Block protocol (SMB) is used in Windows to connect shared resources like files and printers.
 
 Share permissions and NTFS basic permissions are not the same but often apply to the same shared resource.
 
-Share permissions:
+### Share permissions:
 
 - Full control
 - Change
 - Read
 
-NTFS basic permissions:
+### NTFS basic permissions:
 
 - Full control
 - Modify
@@ -83,7 +83,7 @@ NTFS basic permissions:
 - Write
 - Read
 
-NTFS special permissions:
+### NTFS special permissions:
 
 - Full control
 - Traverse folder / execute file
@@ -107,6 +107,8 @@ Computer Management is a tool we can use to identify and monitor shared resource
 ### Event Viewer
 
 Event Viewer is another good place to investigate actions completed on Windows.
+
+## Services
 
 ### Service Control Manager (SCM)
 
@@ -153,9 +155,76 @@ It is highly recommended to create an individual user account to run critical ne
 #### Service Accounts
 
 Notable built-in service accounts in Windows:
+
 - LocalService
 - NetworkService
 - LocalSystem
 
 _We can also create new accounts and use them for the sole purpose of running a service._
 
+## Interactions
+
+### Windows Sessions
+
+#### Interactive
+
+An interactive, or local logon session, is initiated by a user authenticating to a local or domain system by entering
+their credentials. An interactive logon can be initiated by logging directly into the system, by requesting a secondary
+logon session using the runas command via the command line, or through a Remote Desktop connection.
+
+#### Non-interactive
+
+Three types:
+
+- **Local System Account**:  
+  NT AUTHORITY\SYSTEM  
+  more powerful than accounts in the local administrators group.
+
+- **Local Service Account**:  
+  NT AUTHORITY\LocalService  
+  granted limited functionality and can start some services
+
+- **Network Service Account**:  
+  NT AUTHORITY\NetworkService  
+  can establish authenticated sessions for certain network services
+
+_They are used by the Windows operating system to automatically start services and applications without requiring user
+interaction._
+
+### Ways to Interact
+
+- GUI
+- Remote Desktop Protocol (RDP)
+- [Windows Command Line](https://download.microsoft.com/download/5/8/9/58911986-D4AD-4695-BF63-F734CD4DF8F2/ws-commands.pdf)
+- The Command Prompt (CMD)
+- Powershell
+    - Cmdlets
+    - Aliases
+- Scripts
+
+### Running Scripts
+
+The PowerShell ISE (Integrated Scripting Environment) allows users to write PowerShell scripts on the fly.
+It also has an autocomplete/lookup function for PowerShell commands. The PowerShell ISE allows us to write and run
+scripts in the same console, which allows for quick debugging.
+
+We can run PowerShell scripts in a variety of ways. If we know the functions, we can run the script either locally or
+after loading into memory with a download cradle.
+
+One common way to work with a script in PowerShell is to import it so that all functions are then available within
+our current PowerShell console session: Import-Module .\PowerView.ps1. We can then either start a command and cycle
+through the options or type Get-Module to list all loaded modules and their associated commands.
+
+### Execution Policy
+
+_Sometimes we will find that we are unable to run scripts on a system. This is due to a security feature called the
+execution policy,
+which attempts to prevent the execution of malicious scripts._
+
+- AllSigned
+- Bypass
+- Default
+- RemoteSigned
+- Restricted
+- Undefined
+- Unrestricted

@@ -1,8 +1,17 @@
 # Default Powershell Commands
 
+PowerShell utilizes cmdlets, which are small single-function tools built into the shell.
+Cmdlets are in the form of Verb-Noun.
+
+Cmdlets also take arguments or flags. We can type `Verb-Noun -` and hit the tab key to iterate through the arguments.
+
 ## Get Help on Commands
 
 > Get-Help commandName
+
+## Aliases
+
+> Get-Alias
 
 ## OS Info
 
@@ -62,32 +71,41 @@ D: (A;;CCLCSWRPLORC;;;AU)
 ```
 
 D: - the proceeding characters are DACL permissions
+
 AU: - defines the security principal Authenticated Users
+
 A;; - access is allowed
+
 CC - SERVICE_QUERY_CONFIG is the full name, and it is a query to the service control manager (SCM) for the service
 configuration
+
 LC - SERVICE_QUERY_STATUS is the full name, and it is a query to the service control manager (SCM) for the current
 status of the service
+
 SW - SERVICE_ENUMERATE_DEPENDENTS is the full name, and it will enumerate a list of dependent services
+
 RP - SERVICE_START is the full name, and it will start the service
+
 LO - SERVICE_INTERROGATE is the full name, and it will query the service for its current status
+
 RC - READ_CONTROL is the full name, and it will query the security descriptor of the service
-As we read the security descriptor, it can be easy to get lost in the seemingly random order of characters, but recall
+
+_As we read the security descriptor, it can be easy to get lost in the seemingly random order of characters, but recall
 that we are essentially viewing access control entries in an access control list. Each set of 2 characters in between
-the semi-colons represents actions allowed to be performed by a specific user or group.
+the semicolons represents actions allowed to be performed by a specific user or group._
 
 ```
 ;;CCLCSWRPLORC;;;
 ```
 
-After the last set of semi-colons, the characters specify the security principal (User and/or Group) that is permitted
+After the last set of semicolons, the characters specify the security principal (User and/or Group) that is permitted
 to perform those actions.
 
 ```
 ;;;AU
 ```
 
-The character immediately after the opening parentheses and before the first set of semi-colons defines whether the
+The character immediately after the opening parentheses and before the first set of semicolons defines whether the
 actions are Allowed or Denied.
 
 ```
