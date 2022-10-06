@@ -15,6 +15,8 @@ Cmdlets also take arguments or flags. We can type `Verb-Noun -` and hit the tab 
 
 ## OS Info
 
+> wmic os list brief
+
 > Get-WmiObject -Class win32_OperatingSystem | select Version,BuildNumber
 
 ## Directories

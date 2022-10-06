@@ -228,3 +228,19 @@ which attempts to prevent the execution of malicious scripts._
 - Restricted
 - Undefined
 - Unrestricted
+
+### Windows Management Instrumentation (WMI)
+
+WMI is a subsystem of PowerShell that provides system administrators with powerful tools for system monitoring.
+The goal of WMI is to consolidate device and application management across corporate networks.
+
+WMI can be run via the Windows command prompt by typing `WMIC` to open an interactive shell or by running a command
+directly such as wmic computer system get name to get the hostname. We can view a listing of WMIC commands and
+aliases by typing `WMIC /?`.
+
+The WMIC tool is deprecated in Windows 10, version 21H1 and the 21H1 General Availability Channel release of Windows Server.
+This tool is superseded by Windows PowerShell for WMI. Note: This deprecation only applies to the command-line management tool.
+WMI itself isn't affected.
+
+WMI can be used with PowerShell by using the Get-WmiObject module instead.
+
