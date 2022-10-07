@@ -238,9 +238,61 @@ WMI can be run via the Windows command prompt by typing `WMIC` to open an intera
 directly such as wmic computer system get name to get the hostname. We can view a listing of WMIC commands and
 aliases by typing `WMIC /?`.
 
-The WMIC tool is deprecated in Windows 10, version 21H1 and the 21H1 General Availability Channel release of Windows Server.
-This tool is superseded by Windows PowerShell for WMI. Note: This deprecation only applies to the command-line management tool.
-WMI itself isn't affected.
+The WMIC tool is deprecated in Windows 10, version 21H1 and the 21H1 General Availability Channel release of Windows
+Server.
+This tool is superseded by Windows PowerShell for WMI. Note: This deprecation only applies to the command-line
+management tool. WMI itself isn't affected.
 
 WMI can be used with PowerShell by using the Get-WmiObject module instead.
+
+## Microsoft Management Console
+
+<kbd>Win</kbd> + <kbd>R</kbd>
+
+Open: `mmc`
+
+<kbd>File</kbd> > <kbd>Add or remove snap-ins</kbd>
+
+## Windows Subsystem for Linux (WSL)
+
+Allows Linux binaries to be run natively on Windows 10 and Windows Server 2019.
+
+WSL can be installed by running the PowerShell command:
+
+> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+as an Administrator.
+
+Once this feature is enabled, we can either download a Linux distro from the Microsoft Store and install it or manually
+download the Linux distro of our choice and unpack and install it from the command line.
+
+> wsl --install
+
+> wsl --list
+
+> wsl --set-default-version 2
+
+> wsl --install -d distributionName
+
+> wsl --setdefault distributionName
+
+> wsl npm init
+
+_We might need to change a setting and reboot if we use either WSL or VirtualBox:_
+
+WSL:
+
+> bcdedit /set hypervisorlaunchtype auto
+
+VirtualBox (depending on the settings/version):
+
+> bcdedit /set hypervisorlaunchtype off
+
+### Bash
+
+We can now enter a bash shell, using `bash` or `wsl` command.
+
+_We can access the C$ volume and other volumes on the host operating system via the mnt directory,
+making the transition from the WSL host and the Windows host OS seamless._
+
 
