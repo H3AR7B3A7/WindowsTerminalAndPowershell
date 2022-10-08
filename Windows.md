@@ -239,8 +239,7 @@ directly such as wmic computer system get name to get the hostname. We can view 
 aliases by typing `WMIC /?`.
 
 The WMIC tool is deprecated in Windows 10, version 21H1 and the 21H1 General Availability Channel release of Windows
-Server.
-This tool is superseded by Windows PowerShell for WMI. Note: This deprecation only applies to the command-line
+Server. This tool is superseded by Windows PowerShell for WMI. Note: This deprecation only applies to the command-line
 management tool. WMI itself isn't affected.
 
 WMI can be used with PowerShell by using the Get-WmiObject module instead.
@@ -295,4 +294,142 @@ We can now enter a bash shell, using `bash` or `wsl` command.
 _We can access the C$ volume and other volumes on the host operating system via the mnt directory,
 making the transition from the WSL host and the Windows host OS seamless._
 
+## Windows Server Core
+
+- Lower management requirements
+- Smaller attack surface
+- Less disk space required
+- Less memory required
+
+_All configuration and maintenance happens through command-line, PowerShell or remote management (MMS/RSAT)._
+
+Some GUI is still supported for:
+
+- Registry Editor
+- Notepad
+- System Information
+- Windows Installer
+- Task Manager
+- PowerShell
+
+Once installed, the initial setup for Server Core can be done via Sconfig, which is a text-based interface (actually a
+VBScript executed by WScript). Sconfig is used for performing a variety of common commands such as configuring
+networking, checking for/installing Windows updates, account management, configuring remote management, activating
+Windows, and more.
+
+## Windows Security
+
+Windows follows certain security principles. These are units in the system that can be authorized or authenticated for a
+particular action. These units include users, computers on the network, threads, or processes.
+
+### Security Identifier (SID)
+
+Each of the security principals on the system has a unique security identifier (SID).
+
+> whoami /user
+
+Result:
+
+```
+pcName\userName S-1-5-21-674899381-4069889467-2080702030-1002
+```
+
+- S : SID - Identifies the string as a SID.
+- 1 : Revision Level - To date, this has never changed and has always been 1.
+- 5 : Identifier-authority - A 48-bit string that identifies the authority (computer/network) that created the SID.
+- 21 : Subauthority1 - This is a variable number that identifies the user's relation or group described by the SID to
+  the authority that created it. It tells us in what order this authority created the user's account.
+- 674899381-4069889467-2080702030 : Subauthority2 - Tells us which computer (or domain) created the number
+- 1002 : Subauthority3 - The RID that distinguishes one account from another. Tells us whether this user is a normal
+  user, a guest, an administrator, or part of some other group
+
+### Security Accounts Manager (SAM)
+
+SAM grants rights to a network to execute specific processes.
+
+The access rights themselves are managed by Access Control Entries (ACE) in Access Control Lists (ACL). The ACLs contain
+ACEs that define which users, groups, or processes have access to a file or to execute a process, for example.
+
+2 types ACL:
+
+- Discretionary Access Control List (DACL)
+- System Access Control List (SACL)
+
+Every thread and process started or initiated by a user goes through an authorization process. An integral part of this
+process is access tokens, validated by the Local Security Authority (LSA). In addition to the SID, these access tokens
+contain other security-relevant information.
+
+### User Account Control (UAC)
+
+Prevents malware from running or manipulating processes that could damage the computer or its contents through a consent
+prompt.
+
+![UAC Architecture](https://learn.microsoft.com/en-us/windows/security/identity-protection/user-account-control/images/uacarchitecture.gif)
+
+### Registry
+
+The Registry is a hierarchical database, that stores low-level settings for the Windows OS and applications that choose
+to use it. It is divided into computer-specific and user-specific data.
+
+<kbd>Win</kbd> + <kbd>R</kbd>
+
+Open: `regedit`
+
+The entire system registry is stored in several files on the operating system:
+
+```
+C:\Windows\System32\Config\
+C:\Windows\Users\<USERNAME>\Ntuser.dat
+```
+
+#### Run and RunOnce Registry Keys
+
+Contain a logical group of keys, subkeys, and values to support software and files loaded into memory when the operating
+system is started or a user logs in. These hives are useful for maintaining access to the system.
+
+> reg query HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+
+> reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+
+### Application Whitelisting
+
+A whitelist lists approved software applications or executables allowed to be present and run on a system.
+
+A blacklist specifies a list of harmful or disallowed software/applications to block, and all others are allowed to
+run/be installed.
+
+_Whitelisting is recommended by organizations such
+as [NIST](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-167.pdf),
+especially in high-security environments._
+
+### AppLocker
+
+[AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview)
+is Microsoft's application whitelisting solution and was first introduced in Windows 7. AppLocker gives system
+administrators control over which applications and files users can run. It gives granular control over executables,
+scripts, Windows installer files, DLLs, packaged apps, and packed app installers.
+
+### Local Group Policy
+
+Group Policy allows administrators to set, configure, and adjust a variety of settings. In a domain environment, group
+policies are pushed down from a Domain Controller onto all domain-joined machines that Group Policy objects (GPOs) are
+linked to. These settings can also be defined on individual machines using Local Group Policy.
+
+<kbd>Win</kbd> + <kbd>R</kbd>
+
+Open: `gpedit.msc`
+
+### Windows Defender Antivirus
+
+We can use the PowerShell cmdlet Get-MpComputerStatus to check which protection settings are enabled.
+
+> Get-MpComputerStatus | findstr "True"
+
+_Windows Defender does very well in monthly detection rate tests compared to other solutions, even paid ones._
+
+Windows Defender will pick up payloads from common open-source frameworks such as Metasploit or unaltered versions of
+tools such as Mimikatz.
+
+Though it is becoming increasingly difficult, it is still possible to fully bypass Windows Defender protections enforced
+by the latest version with the most up-to-date definitions installed.
 

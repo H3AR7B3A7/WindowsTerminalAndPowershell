@@ -122,3 +122,20 @@ entries because there are three different security principals. Each security pri
 > Get-ACL -Path HKLM:\System\CurrentControlSet\Services\wuauserv | Format-List
 
 _This returns specific account permissions in an easy-to-read format._
+
+### Create User
+
+> net user /add name pass
+
+### Get SID for All Users
+
+> wmic useraccount get name,sid
+
+### Create Group
+
+> net localgroup HR /add
+
+### Get SID for All Groups
+
+> wmic group get name,sid
+
