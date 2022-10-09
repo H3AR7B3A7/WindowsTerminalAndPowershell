@@ -141,6 +141,8 @@ _This returns specific account permissions in an easy-to-read format._
 
 ### Change Consent Prompt Behavior User/Admin
 
+> reg query HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System
+
 > Set-Itemproperty -path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name '
 > ConsentPromptBehaviorAdmin' -value 0
 
