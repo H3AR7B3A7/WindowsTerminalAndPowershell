@@ -139,3 +139,48 @@ _This returns specific account permissions in an easy-to-read format._
 
 > wmic group get name,sid
 
+### Change Consent Prompt Behavior User/Admin
+
+> Set-Itemproperty -path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name '
+> ConsentPromptBehaviorAdmin' -value 0
+
+> Set-Itemproperty -path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name '
+> ConsentPromptBehaviorUser' -value 0
+
+#### Values:
+
+- **0**:
+
+  This option allows the Consent Admin to perform an operation that requires elevation without consent or credentials.
+
+- **1**:
+
+  This option prompts the Consent Admin to enter his or her username and password (or another valid admin) when an
+  operation requires elevation of privilege. This operation occurs on the secure desktop.
+
+- **2**:
+
+  This option prompts the administrator in Admin Approval Mode to select either "Permit" or "Deny" an operation that
+  requires elevation of privilege. If the Consent Admin selects Permit, the operation will continue with the highest
+  available privilege. "Prompt for consent" removes the inconvenience of requiring that users enter their name and
+  password to perform a privileged task. This operation occurs on the secure desktop.
+
+- **3**:
+
+  This option prompts the Consent Admin to enter his or her username and password (or that of another valid admin) when
+  an operation requires elevation of privilege.
+
+- **4**:
+
+  This prompts the administrator in Admin Approval Mode to select either "Permit" or "Deny" an operation that requires
+  elevation of privilege. If the Consent Admin selects Permit, the operation will continue with the highest available
+  privilege. "Prompt for consent" removes the inconvenience of requiring that users enter their name and password to
+  perform a privileged task.
+
+- **5**:
+
+  This option is the default. It is used to prompt the administrator in Admin Approval Mode to select either "Permit"
+  or "Deny" for an operation that requires elevation of privilege for any non-Windows binaries. If the Consent Admin
+  selects Permit, the operation will continue with the highest available privilege. This operation will happen on the
+  secure desktop.
+
