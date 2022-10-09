@@ -167,7 +167,7 @@ _This returns specific account permissions in an easy-to-read format._
 
 - **3**:
 
-  This option prompts the Consent Admin to enter his or her username and password (or that of another valid admin) when
+  This option is the default for a user. This option prompts the Consent Admin to enter his or her username and password (or that of another valid admin) when
   an operation requires elevation of privilege.
 
 - **4**:
@@ -179,8 +179,9 @@ _This returns specific account permissions in an easy-to-read format._
 
 - **5**:
 
-  This option is the default. It is used to prompt the administrator in Admin Approval Mode to select either "Permit"
+  This option is the default for an admin. It is used to prompt the administrator in Admin Approval Mode to select either "Permit"
   or "Deny" for an operation that requires elevation of privilege for any non-Windows binaries. If the Consent Admin
   selects Permit, the operation will continue with the highest available privilege. This operation will happen on the
   secure desktop.
 
+_It is a good practice to set the consent behavior for an admin to 1._
