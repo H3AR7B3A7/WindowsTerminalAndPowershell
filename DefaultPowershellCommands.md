@@ -117,29 +117,29 @@ A;;
 This entire security descriptor associated with the Windows Update (wuauserv) service has three sets of access control
 entries because there are three different security principals. Each security principal has specific permissions applied.
 
-### Examine Service Permissions the PowerShell Way
+## Examine Service Permissions the PowerShell Way
 
 > Get-ACL -Path HKLM:\System\CurrentControlSet\Services\wuauserv | Format-List
 
 _This returns specific account permissions in an easy-to-read format._
 
-### Create User
+## Create User
 
 > net user /add name pass
 
-### Get SID for All Users
+## Get SID for All Users
 
 > wmic useraccount get name,sid
 
-### Create Group
+## Create Group
 
 > net localgroup HR /add
 
-### Get SID for All Groups
+## Get SID for All Groups
 
 > wmic group get name,sid
 
-### Change Consent Prompt Behavior User/Admin
+## Change Consent Prompt Behavior User/Admin
 
 > reg query HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System
 
@@ -149,7 +149,7 @@ _This returns specific account permissions in an easy-to-read format._
 > Set-Itemproperty -path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System' -Name '
 > ConsentPromptBehaviorUser' -value 0
 
-#### Values:
+### Values:
 
 - **0**:
 
@@ -187,3 +187,7 @@ _This returns specific account permissions in an easy-to-read format._
   secure desktop.
 
 _It is a good practice to set the consent behavior for an admin to 1._
+
+## Add Windows Defender Exemption
+
+> Add-MpPreference -ExclusionPath "C:\Users\your user here\AppData\Local\Temp\chocolatey\"

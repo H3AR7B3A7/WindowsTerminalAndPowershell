@@ -433,3 +433,16 @@ tools such as Mimikatz.
 Though it is becoming increasingly difficult, it is still possible to fully bypass Windows Defender protections enforced
 by the latest version with the most up-to-date definitions installed.
 
+#### Exclusions
+
+Since we will be using this platform as a penetration testing host, we may run into some issues with Windows Defender
+finding our tools unsavory. Windows Defender will scan and quarantine or remove anything it deems potentially harmful.
+To make sure Defender does not mess up our plans, we will add some exclusion rules to ensure our tools stay in place.
+
+Some examples:
+> Add-MpPreference -ExclusionPath "C:\Users\your user here\AppData\Local\Temp\chocolatey\"
+
+> Add-MpPreference -ExclusionPath "C:\Users\your user here\Documents\git-repos\
+
+> Add-MpPreference -ExclusionPath "C:\Users\your user here\Documents\scripts\
+
