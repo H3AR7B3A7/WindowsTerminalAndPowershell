@@ -446,3 +446,7 @@ Some examples:
 
 > Add-MpPreference -ExclusionPath "C:\Users\your user here\Documents\scripts\
 
+### Chocolatey
+
+[Chocolatey](https://chocolatey.org/install)  is software management automation for Windows that wraps installers,
+executables, zips, and scripts into compiled packages.

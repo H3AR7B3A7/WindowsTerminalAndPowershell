@@ -169,7 +169,8 @@ _This returns specific account permissions in an easy-to-read format._
 
 - **3**:
 
-  This option is the default for a user. This option prompts the Consent Admin to enter his or her username and password (or that of another valid admin) when
+  This option is the default for a user. This option prompts the Consent Admin to enter his or her username and
+  password (or that of another valid admin) when
   an operation requires elevation of privilege.
 
 - **4**:
@@ -181,7 +182,8 @@ _This returns specific account permissions in an easy-to-read format._
 
 - **5**:
 
-  This option is the default for an admin. It is used to prompt the administrator in Admin Approval Mode to select either "Permit"
+  This option is the default for an admin. It is used to prompt the administrator in Admin Approval Mode to select
+  either "Permit"
   or "Deny" for an operation that requires elevation of privilege for any non-Windows binaries. If the Consent Admin
   selects Permit, the operation will continue with the highest available privilege. This operation will happen on the
   secure desktop.
@@ -191,3 +193,37 @@ _It is a good practice to set the consent behavior for an admin to 1._
 ## Add Windows Defender Exemption
 
 > Add-MpPreference -ExclusionPath "C:\Users\your user here\AppData\Local\Temp\chocolatey\"
+
+## Change Execution Policy for Process Scope
+
+> Get-ExecutionPolicy -List
+
+> Set-ExecutionPolicy Unrestricted -Scope Process
+
+## Install Chocolatey
+
+> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol
+> = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient)
+> .DownloadString('https://chocolatey.org/install.ps1'))
+
+## Install Tools /w Chocolatey
+
+> choco install python vscode git wsl2 openssh openvpn microsoft-windows-terminal
+
+## Choco Build Script
+
+```powershell
+# Choco build script
+
+write-host "*** Initial app install for core tools and packages. ***"
+
+write-host "*** Configuring chocolatey ***"
+choco feature enable -n allowGlobalConfirmation
+
+write-host "*** Beginning install, go grab a coffee. ***"
+choco upgrade wsl2 python git vscode openssh openvpn netcat nmap wireshark \
+burp-suite-free-edition heidisql sysinternals putty golang neo4j-community openjdk
+
+write-host "*** Build complete, restoring GlobalConfirmation policy. ***"
+choco feature disable -n allowGlobalCOnfirmation
+```
